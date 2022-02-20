@@ -12,11 +12,11 @@ def user_input_converter(input):
     elif input == 'P':
         return 'Paper'
     else:
-        return 'Please enter R (rock), P (paper) or S (scissors)'
+        return 'Please choose R (rock), P (paper) or S (scissors)'
 
 #Capture converted user input
 user_input_converted = user_input_converter(user_input)
-print(user_input_converted)
+print("You have chosen {}".format(user_input_converted.lower()))
 
 
 #Random number generator
@@ -36,22 +36,22 @@ def computer_input_converter(com_input):
 
 #Capture computer choice
 computer_choice = computer_input_converter(random_number_generator())
-print(computer_choice)
+print("The computer has chosen {}".format(computer_choice.lower()))
 
 
 #Compare user and computer to decide who wins
 def decide_winner(user_input, com_input):
     if user_input == com_input:
-        return 'Its a draw!'
+        return "it's a draw!"
     elif user_input == 'Paper' and com_input == 'Rock':
-        return 'User wins!'
+        return 'you win!'
     elif user_input == 'Scissors' and com_input == 'Paper':
-        return 'User wins!'
+        return 'you win!'
     elif user_input == 'Rock' and com_input == 'Scissors':
-        return 'User wins!'
+        return 'you win!'
     else:
-        return 'Computer wins!'
+        return 'the computer wins!'
 
 
 winner = decide_winner(user_input_converted, computer_choice)
-print(winner)
+print("Therefore, {}".format(winner))
