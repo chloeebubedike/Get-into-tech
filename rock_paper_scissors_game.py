@@ -1,10 +1,10 @@
 import random
 
-# Prompt user input
+# Prompts user input (R, P or S)
 user_input_value = input("Please enter Rock (R), Paper (P) or Scissors (S):").upper()
 
 
-# Convert user input into Rock, Paper or Scissors
+# Converts user input into full word (Rock, Paper or Scissors) or informs user to enter a valid character
 def user_input_converter(initial_user_input):
     if initial_user_input == 'R':
         return 'Rock'
@@ -16,7 +16,7 @@ def user_input_converter(initial_user_input):
         return 'You have selected an invalid character. Please choose R (rock), P (paper) or S (scissors) to play!'
 
 
-# Capture converted user input
+# Captures and prints converted user input or prints invalid character message
 user_input_converted_value = user_input_converter(user_input_value)
 if user_input_converted_value == 'Rock' or user_input_converted_value == 'Scissors' or user_input_converted_value == 'Paper':
     print("You have chosen {}".format(user_input_converted_value.lower()))
@@ -25,10 +25,8 @@ else:
 
 
 # Random number generator
-
 def random_number_generator():
-    random_num = random.randrange(1, 3, 1)
-    return random_num
+    return random.randrange(1, 3, 1)
 
 
 # Convert computer choice into input
@@ -48,14 +46,14 @@ if user_input_converted_value == 'Rock' or user_input_converted_value == 'Scisso
 
 
 # Compare user and computer to decide who wins
-def winner_decider(final_user_input, com_input):
-    if final_user_input == com_input:
+def winner_decider(compared_user_input, compared_computer_input):
+    if compared_user_input == compared_computer_input:
         return "it's a draw!"
-    elif final_user_input == 'Paper' and com_input == 'Rock':
+    elif compared_user_input == 'Paper' and compared_computer_input == 'Rock':
         return 'you win!'
-    elif final_user_input == 'Scissors' and com_input == 'Paper':
+    elif compared_user_input == 'Scissors' and compared_computer_input == 'Paper':
         return 'you win!'
-    elif final_user_input == 'Rock' and com_input == 'Scissors':
+    elif compared_user_input == 'Rock' and compared_computer_input == 'Scissors':
         return 'you win!'
     else:
         return 'the computer wins!'
