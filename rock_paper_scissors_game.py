@@ -11,10 +11,9 @@ def user_input_converter(initial_user_input):
     elif initial_user_input == 'S':
         return 'Scissors'
     elif initial_user_input == 'P':
-      return 'Paper'
+        return 'Paper'
     else:
         return 'You have selected an invalid character. Please choose R (rock), P (paper) or S (scissors) to play!'
-
 
 
 # Capture converted user input
@@ -28,8 +27,8 @@ else:
 # Random number generator
 
 def random_number_generator():
-   random_num = random.randrange(1, 3, 1)
-   return random_num
+    random_num = random.randrange(1, 3, 1)
+    return random_num
 
 
 # Convert computer choice into input
