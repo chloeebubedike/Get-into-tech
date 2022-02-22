@@ -1,12 +1,9 @@
-# Import random module needed for random number generator function
+# Import random module
 import random
 
-# Prompts user input (R, P or S)
-user_input_value = input("Please enter Rock (R), Paper (P) or Scissors (S):").upper()
 
-
-# Converts user input into full word (Rock, Paper or Scissors) or informs user to enter a valid character
-def user_input_converter(user_input_letter):
+# Function to get allocate input
+def allocate_user_input(user_input_letter):
     if user_input_letter == 'R':
         return 'Rock'
     elif user_input_letter == 'S':
@@ -17,21 +14,13 @@ def user_input_converter(user_input_letter):
         return 'You have selected an invalid character. Please choose R (rock), P (paper) or S (scissors) to play!'
 
 
-# Captures and prints converted user input or prints invalid character message if user has not input R, P or S
-user_input_converted_value = user_input_converter(user_input_value)
-if user_input_converted_value == 'Rock' or user_input_converted_value == 'Scissors' or user_input_converted_value == 'Paper':
-    print("You have chosen {}".format(user_input_converted_value.lower()))
-else:
-    print(user_input_converted_value)
-
-
-# Random number generator
-def random_number_generator():
+# Function to generate random number
+def generate_random_number():
     return random.randrange(1, 3, 1)
 
 
 # Convert computer choice into input (Rock, Paper or Scissors)
-def computer_input_converter(computer_input):
+def allocate_computer_input(computer_input):
     if computer_input == 0:
         return 'Rock'
     elif computer_input == 2:
@@ -40,15 +29,8 @@ def computer_input_converter(computer_input):
         return 'Paper'
 
 
-# Capture computer choice by calling the function
-computer_choice_converted_value = computer_input_converter(random_number_generator())
-# If statement to only message print message if the user input R, P or S
-if user_input_converted_value == 'Rock' or user_input_converted_value == 'Scissors' or user_input_converted_value == 'Paper':
-    print("The computer has chosen {}".format(computer_choice_converted_value.lower()))
-
-
 # Compare user and computer input values to decide who wins
-def winner_decider(compared_user_input, compared_computer_input):
+def decide_winner(compared_user_input, compared_computer_input):
     if compared_user_input == compared_computer_input:
         return "it's a draw!"
     elif compared_user_input == 'Paper' and compared_computer_input == 'Rock':
@@ -61,10 +43,29 @@ def winner_decider(compared_user_input, compared_computer_input):
         return 'the computer wins!'
 
 
-# Capture the winner results
-winner = winner_decider(user_input_converted_value, computer_choice_converted_value)
+# Function to print game script
+def print_game_script(user_input, computer_input, decided_winner):
+    if user_input == 'Rock' or user_input == 'Scissors' or user_input == 'Paper':
+        print("You have chosen {}".format(user_input.lower()))
+        print("The computer has chosen {}".format(computer_input.lower()))
+        print("Therefore, {}".format(decided_winner))
+    else:
+        print(user_input)
 
-# If statement will only print if user has a converted input of Rock, Scissors or Paper
-if user_input_converted_value == 'Rock' or user_input_converted_value == 'Scissors' or user_input_converted_value == 'Paper':
-    print("Therefore, {}".format(winner))
+
+# Prompt user input
+user_input_value = input("Please enter Rock (R), Paper (P) or Scissors (S):").upper()
+
+# Allocate user input
+user_input_converted_value = allocate_user_input(user_input_value)
+
+# Allocate user choice
+computer_choice_converted_value = allocate_computer_input(generate_random_number())
+
+# Decide winner
+winner = decide_winner(user_input_converted_value, computer_choice_converted_value)
+
+# Print game script
+print_game_script(user_input_converted_value, computer_choice_converted_value, winner)
+
 
