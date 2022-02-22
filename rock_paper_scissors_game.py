@@ -1,4 +1,4 @@
-# Import random module for random number generator function
+# Import random module needed for random number generator function
 import random
 
 # Prompts user input (R, P or S)
