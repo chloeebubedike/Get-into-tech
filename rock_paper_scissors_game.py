@@ -16,7 +16,7 @@ def allocate_user_input(user_input_letter):
 
 # Function to generate random number
 def generate_random_number():
-    return random.randrange(1, 3, 1)
+    return random.randrange(0, 3, 1)
 
 
 # Convert computer choice into input (Rock, Paper or Scissors)
