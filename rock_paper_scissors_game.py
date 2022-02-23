@@ -23,10 +23,10 @@ def generate_random_number():
 def allocate_computer_input(computer_input):
     if computer_input == 0:
         return 'Rock'
-    elif computer_input == 2:
-        return 'Scissors'
     elif computer_input == 1:
         return 'Paper'
+    elif computer_input == 2:
+        return 'Scissors'
 
 
 # Compare user and computer input values to decide who wins
