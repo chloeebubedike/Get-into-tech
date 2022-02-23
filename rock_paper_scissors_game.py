@@ -53,7 +53,7 @@ def print_game_script(user_input, computer_input, decided_winner):
         print(user_input)
 
 
-# Prompt user input (function call)
+# Prompt user input
 user_input_value = input("Please enter Rock (R), Paper (P) or Scissors (S):").upper()
 
 # Allocate user input (function call)
