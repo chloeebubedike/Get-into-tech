@@ -2,7 +2,7 @@
 import random
 
 
-# Function to get allocate input
+# Function to allocate user input
 def allocate_user_input(user_input_letter):
     if user_input_letter == 'R':
         return 'Rock'
@@ -19,7 +19,7 @@ def generate_random_number():
     return random.randrange(0, 3, 1)
 
 
-# Convert computer choice into input (Rock, Paper or Scissors)
+# Function to allocate computer input
 def allocate_computer_input(computer_input):
     if computer_input == 0:
         return 'Rock'
@@ -29,7 +29,7 @@ def allocate_computer_input(computer_input):
         return 'Scissors'
 
 
-# Compare user and computer input values to decide who wins
+# Function to compare user and computer input to decide who wins
 def decide_winner(compared_user_input, compared_computer_input):
     if compared_user_input == compared_computer_input:
         return "it's a draw!"
@@ -53,19 +53,19 @@ def print_game_script(user_input, computer_input, decided_winner):
         print(user_input)
 
 
-# Prompt user input
+# Prompt user input (function call)
 user_input_value = input("Please enter Rock (R), Paper (P) or Scissors (S):").upper()
 
-# Allocate user input
+# Allocate user input (function call)
 user_input_converted_value = allocate_user_input(user_input_value)
 
-# Allocate user choice
+# Allocate computer input (function call)
 computer_choice_converted_value = allocate_computer_input(generate_random_number())
 
-# Decide winner
+# Decide winner (function call)
 winner = decide_winner(user_input_converted_value, computer_choice_converted_value)
 
-# Print game script
+# Print game script (function call)
 print_game_script(user_input_converted_value, computer_choice_converted_value, winner)
 
 
